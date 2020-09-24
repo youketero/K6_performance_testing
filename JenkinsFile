@@ -1,3 +1,5 @@
-stage("Check"){
-  echo "KEK"
-  }
+node("master"){
+    stage("check"){
+        echo "OK"
+    }
+}
