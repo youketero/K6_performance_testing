@@ -1,1 +1,3 @@
-echo "KEK"
+stage("Check"){
+  echo "KEK"
+  }
