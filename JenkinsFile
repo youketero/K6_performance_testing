@@ -1,3 +1,1 @@
-node("master"){
-	echo "it just okkk"
-}
+echo "KEK"
