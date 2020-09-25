@@ -1,4 +1,4 @@
-properties([parameters([choice (choices: ['JSON', 'CSV'], description: '', name: 'Output Format file')])])
+properties([parameters([choice (choices: ['JSON', 'CSV'], description: '', name: 'Output Format file'), choice(choices: ['YES', 'NO'], description: '', name: 'Run_test')])])
 
 node("master"){
     stage("check"){
@@ -9,7 +9,9 @@ node("master"){
     }
     stage("Run performance test"){
         def path = pwd()
-        bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
-               k6 run ''' + path + '''\\Scripts\\Script.js'''
+        if("${params.Run_test}" == "YES"){
+            bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
+            k6 run ''' + path + '''\\Scripts\\Script.js'''
+        }
     }
 }
