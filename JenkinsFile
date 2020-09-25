@@ -12,7 +12,7 @@ node("master"){
             def script = "${params.Script}"
             def out = "${params.Output_file}"
             bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
-            k6 run --out ''' + out + '''=''' + pwd() + '''my_test_result.''' + out + ''' ''' + pwd() + '''\\Scripts\\'''+ script +'''.js'''
+            k6 run --out ''' + out + '''=''' + pwd() + '''\\my_test_result.''' + out + ''' ''' + pwd() + '''\\Scripts\\'''+ script +'''.js'''
         }
     }
 }
