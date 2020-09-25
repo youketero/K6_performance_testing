@@ -9,8 +9,9 @@ node("master"){
     }
     stage("Run performance test"){
         if("${params.Run_test}" == "YES"){
+            def script = "${params.Script}"
             bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
-            k6 run ''' + pwd() + '''\\Scripts\\'''+ '''${Script}''' +'''.js'''
+            k6 run ''' + pwd() + '''\\Scripts\\'''+ script +'''.js'''
         }
     }
 }
