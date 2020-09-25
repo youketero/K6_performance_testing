@@ -2,4 +2,10 @@ node("master"){
     stage("check"){
         echo "OK"
     }
+    stage("Git pull"){
+        chekout scm
+    }
+    stage("Run performance test"){
+        echo "check"
+    }
 }
