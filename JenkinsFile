@@ -6,8 +6,8 @@ node("master"){
         checkout scm
     }
     stage("Run performance test"){
-        echo pwd()
+        def path = pwd()
         bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
-               k6'''
+               k6 run ${path}\\Scripts\\Script.js'''
     }
 }
