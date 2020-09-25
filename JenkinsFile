@@ -1,3 +1,5 @@
+properties([parameters([choice (choices: ['JSON', 'CSV'], description: '', name: 'Output Format file')])])
+
 node("master"){
     stage("check"){
         echo "OK"
