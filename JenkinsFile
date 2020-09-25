@@ -15,4 +15,7 @@ node("master"){
             k6 run --out ''' + out + '''=''' + pwd() + '''\\my_test_result.''' + out + ''' ''' + pwd() + '''\\Scripts\\'''+ script +'''.js'''
         }
     }
+    stage("Archive"){
+        archiveArtifacts artifacts: "" + pwd() + "\\my_test_result." + out + "", fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
+    }
 }
