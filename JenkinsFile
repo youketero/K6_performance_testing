@@ -1,4 +1,4 @@
-properties([parameters([choice (choices: ['JSON', 'CSV'], description: '', name: 'Output Format file'), choice(choices: ['YES', 'NO'], description: '', name: 'Run_test')])])
+properties([parameters([choice (choices: ['JSON', 'CSV'], description: '', name: 'Output Format file'), choice(choices: ['YES', 'NO'], description: '', name: 'Run_test'), choice(choices: ['Script', 'Script2'], description: '', name: 'Script')])])
 
 node("master"){
     stage("Delete previous files"){
@@ -10,7 +10,7 @@ node("master"){
     stage("Run performance test"){
         if("${params.Run_test}" == "YES"){
             bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
-            k6 run ''' + pwd() + '''\\Scripts\\Script.js'''
+            k6 run ''' + pwd() + '''\\Scripts\\${params.Script}.js'''
         }
     }
 }
