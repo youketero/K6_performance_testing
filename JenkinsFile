@@ -3,7 +3,7 @@ node("master"){
         echo "OK"
     }
     stage("Git pull"){
-        chekout scm
+        checkout scm
     }
     stage("Run performance test"){
         echo "check"
