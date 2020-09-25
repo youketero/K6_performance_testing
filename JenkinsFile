@@ -8,10 +8,9 @@ node("master"){
         checkout scm
     }
     stage("Run performance test"){
-        def path = pwd()
         if("${params.Run_test}" == "YES"){
             bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
-            k6 run ''' + path + '''\\Scripts\\Script.js'''
+            k6 run ''' + pwd() + '''\\Scripts\\Script.js'''
         }
     }
 }
