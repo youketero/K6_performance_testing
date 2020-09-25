@@ -6,6 +6,7 @@ node("master"){
         checkout scm
     }
     stage("Run performance test"){
-        echo "check"
+        bat '''cd C:\\Program Files\\k6-v0.28.0-win64\\
+               k6'''
     }
 }
