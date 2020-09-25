@@ -1,4 +1,3 @@
-<script>
 import http from "k6/http";
 import { check, group, sleep } from "k6";
 import { Rate } from "k6/metrics";
@@ -18,4 +17,3 @@ export default function () {
 
     sleep(Math.random() * 3 + 2);
 }
-</script>
