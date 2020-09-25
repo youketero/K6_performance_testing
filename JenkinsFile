@@ -1,8 +1,8 @@
 properties([parameters([choice (choices: ['JSON', 'CSV'], description: '', name: 'Output Format file'), choice(choices: ['YES', 'NO'], description: '', name: 'Run_test')])])
 
 node("master"){
-    stage("check"){
-        echo "OK"
+    stage("Delete previous files"){
+        deleteDir()
     }
     stage("Git pull"){
         checkout scm
