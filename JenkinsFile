@@ -1,4 +1,4 @@
-properties([parameters([choice (choices: ['JSON', 'CSV'], description: '', name: 'Output_file'), choice(choices: ['YES', 'NO'], description: '', name: 'Run_test'), choice(choices: ['Script', 'Script2'], description: '', name: 'Script')])])
+properties([parameters([choice (choices: ['json', 'csv'], description: '', name: 'Output_file'), choice(choices: ['YES', 'NO'], description: '', name: 'Run_test'), choice(choices: ['Script', 'Script2'], description: '', name: 'Script')])])
 
 node("master"){
     stage("Delete previous files"){
